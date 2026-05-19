@@ -15,6 +15,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="menu-toggle">☰</div>
+
     <div class="nav-left">
       <a href="#home">Inicio</a>
       <a href="#studies">Estudios</a>
@@ -34,7 +35,7 @@
 <!-- HOME -->
 <section id="home" class="hero">
   <div class="hero-content">
-    <img src="images/image.png" class="profile-img">
+    <img src="images/image.png" class="profile-img" alt="Foto de perfil">
 
     <h1>Esteban Aguilar</h1>
     <p>Técnico en Redes & Software</p>
@@ -46,7 +47,6 @@
   <h2>Estudios</h2>
 
   <div class="studies-container">
-
     <div class="study-card">
       <h3>Ingeniero Tecnológico en Electrónica</h3>
       <p>2026 - Actualidad</p>
@@ -61,7 +61,6 @@
       <h3>Bachiller Tecnológico en Informática</h3>
       <p>2021 - 2023</p>
     </div>
-
   </div>
 
   <!-- CURSOS -->
@@ -73,7 +72,6 @@
     <span onclick="openModal('images/introductioncybersecurity.PNG')">Introducción a la Cyberseguridad</span>
     <span onclick="openModal('images/conceptosbasicosredes.PNG')">Conceptos básicos de redes</span>
   </div>
-
 </section>
 
 <!-- PROJECTS -->
@@ -82,35 +80,34 @@
 
   <div class="projects-container">
 
-    <div class="project-card">
+    <!-- PROYECTO CON GALERÍA -->
+    <div class="project-card" onclick="openProjectGallery([
+      'images/2.jpeg',
+      'images/3.jpeg',
+      'images/4.jpeg',
+      'images/5.jpeg',
+      'images/7.jpeg'
+    ])">
       <h3>Reparación y Mantenimiento de PCs</h3>
-      <p>Soporte técnico, limpieza y diagnóstico de equipos.</p>
+      <p>Soporte técnico, limpieza y diagnóstico de equipos a todo público.</p>
 
       <div class="skills">
-        <span>Hardware</span>
+        <span>Mantenimiento</span>
         <span>Diagnóstico</span>
         <span>Limpieza</span>
         <span>Optimización</span>
       </div>
     </div>
 
-    <div class="project-card">
-      <h3>GreenHabit</h3>
-      <p>App para reducir consumo energético.</p>
-
-      <div class="skills">
-        <span>Flutter</span>
-        <span>PHP</span>
-        <span>MySQL</span>
-      </div>
-    </div>
+  
 
   </div>
 </section>
+
+<!-- SKILLS -->
 <section id="skills" class="section">
   <h2>Habilidades</h2>
 
-  <!-- REDES -->
   <h3 class="skills-subtitle">Redes</h3>
   <div class="skills">
     <span>Configuración de redes</span>
@@ -121,7 +118,6 @@
     <span>Subnetting</span>
   </div>
 
-  <!-- SOPORTE IT -->
   <h3 class="skills-subtitle">Soporte IT</h3>
   <div class="skills">
     <span>Soporte técnico a usuarios</span>
@@ -133,7 +129,6 @@
     <span>Instalación de software</span>
   </div>
 
-  <!-- DESARROLLO -->
   <h3 class="skills-subtitle">Desarrollo</h3>
   <div class="skills">
     <span>HTML</span>
@@ -143,7 +138,6 @@
     <span>Flutter</span>
   </div>
 
-  <!-- HABILIDADES BLANDAS -->
   <h3 class="skills-subtitle">Otros</h3>
   <div class="skills">
     <span>Inglés</span>
@@ -151,17 +145,18 @@
     <span>Resolución de problemas</span>
     <span>Proactividad</span>
   </div>
+</section>
 
-</section><!-- ABOUT -->
+<!-- ABOUT -->
 <section id="about" class="section">
   <h2>Sobre mí</h2>
 
   <p class="about-text">
-    Soy estudiante en formación continua con interés en soporte técnico, desarrollo de software y redes.
-Cuento con experiencia en el uso de herramientas como Jira Software, Cypress y modelado UML, así como en la gestión de sistemas operativos Windows y Linux.
-Además, en mi tiempo libre realizo mantenimiento y reparación de computadoras, lo que me permite reforzar mis conocimientos prácticos en hardware.
-Me caracterizo por la constancia y la capacidad de resolver problemas de forma práctica, con un enfoque en el aprendizaje continuo y la mejora en cada proyecto académico, laboral o personal.
-Disfruto resolver problemas, trabajar con hardware y brindar soporte a usuarios.
+    Soy estudiante en formación continua con interés en soporte técnico,
+    desarrollo de software y redes. Cuento con experiencia en el uso de
+    herramientas como Jira Software, Cypress y modelado UML, así como en
+    la gestión de sistemas operativos Windows y Linux. Además, en mi
+    tiempo libre realizo mantenimiento y reparación de computadoras.
   </p>
 </section>
 
@@ -170,7 +165,6 @@ Disfruto resolver problemas, trabajar con hardware y brindar soporte a usuarios.
   <h2>Contacto</h2>
 
   <div class="contact-icons">
-
     <a href="https://wa.me/59892428015" target="_blank">
       <i class="fab fa-whatsapp"></i>
     </a>
@@ -182,15 +176,24 @@ Disfruto resolver problemas, trabajar con hardware y brindar soporte a usuarios.
     <a href="https://www.linkedin.com/in/esteban-aguilar-a55a88343/" target="_blank">
       <i class="fab fa-linkedin"></i>
     </a>
-
-
   </div>
 </section>
 
-<!-- MODAL -->
+<!-- MODAL CURSOS -->
 <div id="modal" class="modal">
   <span class="close" onclick="closeModal()">&times;</span>
   <img id="modal-img" class="modal-content">
+</div>
+
+<!-- GALERÍA DE PROYECTOS -->
+<div id="projectGallery" class="gallery-modal">
+  <span class="gallery-close" onclick="closeProjectGallery()">&times;</span>
+
+  <button class="gallery-btn prev" onclick="changeImage(-1)">❮</button>
+
+  <img id="galleryImage" class="gallery-image">
+
+  <button class="gallery-btn next" onclick="changeImage(1)">❯</button>
 </div>
 
 <script src="script.js"></script>

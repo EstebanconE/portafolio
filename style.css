@@ -430,3 +430,97 @@ body {
     display: none; /* 🔥 ocultamos el email en mobile */
   }
 }
+
+
+
+
+/* =========================
+   GALERÍA DE PROYECTOS
+========================= */
+.gallery-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 3000;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-image {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(159, 92, 255, 0.6);
+}
+
+.gallery-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 45px;
+  color: white;
+  cursor: pointer;
+  z-index: 3001;
+}
+
+.gallery-close:hover {
+  color: #9f5cff;
+}
+
+.gallery-btn {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  z-index: 3001;
+  transition: 0.3s;
+}
+
+.gallery-btn:hover {
+  color: #9f5cff;
+  transform: scale(1.1);
+}
+
+.gallery-btn.prev {
+  left: 40px;
+}
+
+.gallery-btn.next {
+  right: 40px;
+}
+
+/* Cursor tipo mano en la tarjeta */
+.project-card {
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .gallery-image {
+    max-width: 90%;
+    max-height: 70%;
+  }
+
+  .gallery-btn {
+    font-size: 35px;
+    padding: 5px 12px;
+  }
+
+  .gallery-btn.prev {
+    left: 10px;
+  }
+
+  .gallery-btn.next {
+    right: 10px;
+  }
+
+  .gallery-close {
+    right: 20px;
+    font-size: 35px;
+  }
+}
